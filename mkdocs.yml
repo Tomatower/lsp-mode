@@ -67,6 +67,7 @@ nav:
     - Nix: page/lsp-nix.md
     - OCaml (ocaml): page/lsp-ocaml.md
     - OCaml (ocaml-lsp): page/lsp-ocaml-lsp-server.md
+    - OpenSCAD: page/lsp-openscad.md
     - Pascal/Object Pascal: page/lsp-pascal.md
     - Perl: page/lsp-perl.md
     - PHP (intelephense): page/lsp-intelephense.md
