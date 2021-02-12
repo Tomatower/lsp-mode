@@ -40,14 +40,14 @@
 
 (defun lsp-openscad-server-start-fun (port)
   `(,lsp-openscad-server-path
-    "--lsp-listen",(number-to-string port)))
+    "--lsp-listen" ,(number-to-string port)))
 
 (defun lsp-openscad-server-connection ()
   (lsp-tcp-connection 'lsp-openscad-server-start-fun))
 
 (lsp-register-client
  (make-lsp-client :new-connection (lsp-openscad-server-connection)
-                  :major-modes '(SCAD/*l)
+                  :major-modes '(scad-mode)
                   :priority -1
                   :server-id 'openscad))
 

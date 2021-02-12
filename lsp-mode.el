@@ -709,6 +709,7 @@ Changes take effect only when a new session is started."
                                         (lua-mode . "lua")
                                         (sass-mode . "sass")
                                         (scss-mode . "scss")
+                                        (scad-mode . "openscad")
                                         (xml-mode . "xml")
                                         (c-mode . "c")
                                         (c++-mode . "cpp")
