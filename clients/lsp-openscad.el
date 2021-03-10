@@ -45,6 +45,18 @@
 (defun lsp-openscad-server-connection ()
   (lsp-tcp-connection 'lsp-openscad-server-start-fun))
 
+(defun lsp-openscad-request-preview ()
+  "Request the OpenSCAD LSP server to preview the current buffer."
+  (interactive)
+  (lsp-request-async "$openscad/preview"
+                     `(:uri ,(lsp--buffer-uri))
+                     (lambda (_)
+                       (lsp--info "Preview Done!"))
+                     :error-handler #'ignore
+                     :mode 'tick
+                     :no-merge t
+                     :cancel-token (concat (buffer-name (current-buffer)) "-preview")))
+
 (lsp-register-client
  (make-lsp-client :new-connection (lsp-openscad-server-connection)
                   :major-modes '(scad-mode)
